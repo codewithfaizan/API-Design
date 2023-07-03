@@ -14,5 +14,5 @@
 <h4>Architecture </h4>
 <ul>
 <li>A Three Layer Architecture using Express.js for the API as shown</li>
- <img src = "arch.png" width ='125' height = '75' align="right"/> &nbsp;
+ <img src = "./arch.png" width ='125' height = '75' align="right"/> &nbsp;
 </ul>
