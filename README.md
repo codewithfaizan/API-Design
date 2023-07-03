@@ -12,7 +12,16 @@
 </ul>
 
 <h4>Architecture </h4>
+<p>A Three Layer Architecture using Express.js for the API  </p>
 <ul>
-<li>A Three Layer Architecture using Express.js for the API as shown</li>
- <img src = "./arch.png" width ='125' height = '75' align="right"/> &nbsp;
-</ul>
+<h5>Controller</h5>
+<li>Inside the Controller we'll be handling all stuff that is related to HTTP. That means we're dealing with requests and responses for our endpoints. </li>
+<h5>Router</h5> 
+<li>. Above that layer is also a little Router from Express that passes requests to the corresponding controller.</li>
+<h5>Service Layer</h5> 
+<li>The whole business logic will be in the Service Layer that exports certain services (methods) which are used by the controller.</li>
+<h5>Data Access Layer</h5>
+<li>The third layer is the Data Access Layer where we'll be working with our Database</li>
+<li>In our example we're not using a real database such as MongoDB or PostgreSQL because I'd like to focus more on the best practices itself. Therefore we're using a local JSON file that mimics our Database. But this logic can be transferred to other databases of course.</li>
+</ul
+
