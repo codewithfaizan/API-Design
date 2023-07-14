@@ -22,8 +22,10 @@
 
 <h4>Basic Setup </h4>
 
-# Create project folder & navigate into it
+## Create project folder & navigate into it
+```bash
 mkdir crossfit-wod-api && cd crossfit-wod-api
+```
 
 # Create a src folder & navigate into it
 mkdir src && cd src
