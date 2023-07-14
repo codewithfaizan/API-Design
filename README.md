@@ -20,3 +20,47 @@
 <h5>Data Access Layer</h5> <p>The third layer is the Data Access Layer where we'll be working with our Database. In our example we're not using a real database such as MongoDB or PostgreSQL because I'd like to focus more on the best practices itself. Therefore we're using a local JSON file that mimics our Database. But this logic can be transferred to other databases of course.</p>
 </ul
 
+<h4>Basic Setup </h4>
+
+# Create project folder & navigate into it
+mkdir crossfit-wod-api && cd crossfit-wod-api
+
+# Create a src folder & navigate into it
+mkdir src && cd src
+
+# Create sub folders
+mkdir controllers && mkdir services && mkdir database && mkdir routes
+
+# Create an index file (entry point of our API)
+touch index.js
+
+# We're currently in the src folder, so we need to move one level up first 
+cd .. 
+
+# Create package.json file 
+npm init -y
+
+<h4>Install dependencies for the basic setup: </h4>
+
+# Dev Dependencies 
+npm i -D nodemon 
+
+# Dependencies 
+npm i express
+
+<h4>Open the project and configure Express:</h4>
+
+// In src/index.js 
+const express = require("express"); 
+
+const app = express(); 
+const PORT = process.env.PORT || 3000; 
+
+// For testing purposes 
+app.get("/", (req, res) => { 
+    res.send("<h2>It's Working!</h2>"); 
+}); 
+
+app.listen(PORT, () => { 
+    console.log(`API is listening on port ${PORT}`); 
+});
