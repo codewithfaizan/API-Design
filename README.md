@@ -22,7 +22,6 @@
 </ul
 
 ### Basic Setup
-
 ### Create project folder & navigate into it
 ```bash
 mkdir crossfit-wod-api && cd crossfit-wod-api
