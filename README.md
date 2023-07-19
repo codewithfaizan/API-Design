@@ -21,7 +21,7 @@
 <h5>Data Access Layer</h5> <p>The third layer is the Data Access Layer where we'll be working with our Database. In our example we're not using a real database such as MongoDB or PostgreSQL because I'd like to focus more on the best practices itself. Therefore we're using a local JSON file that mimics our Database. But this logic can be transferred to other databases of course.</p>
 </ul
 
-### Basic Setup
+## Basic Setup
 ### Create project folder & navigate into it
 ```bash
 mkdir crossfit-wod-api && cd crossfit-wod-api
