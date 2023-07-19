@@ -11,7 +11,7 @@
 <li>This will help our users (that will be gym owners) come up with workout plans and maintain their own workouts inside a single application</li>
 </ul>
 
-<h4>Architecture </h4>
+### Architecture
 <p>A Three Layer Architecture using Express.js for the API  </p>
 <ul>
 <h5>Controller</h5> <p>Inside the Controller we'll be handling all stuff that is related to HTTP. That means we're dealing with requests and responses for our endpoints. </p>
@@ -20,7 +20,7 @@
 <h5>Data Access Layer</h5> <p>The third layer is the Data Access Layer where we'll be working with our Database. In our example we're not using a real database such as MongoDB or PostgreSQL because I'd like to focus more on the best practices itself. Therefore we're using a local JSON file that mimics our Database. But this logic can be transferred to other databases of course.</p>
 </ul
 
-<h4>Basic Setup </h4>
+### Basic Setup
 
 ## Create project folder & navigate into it
 ```bash
