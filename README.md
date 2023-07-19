@@ -84,3 +84,15 @@ app.listen(PORT, () => {
     console.log(`API is listening on port ${PORT}`); 
 });
 ```
+## Name Resources in Plural
+Let's start with our fundamental CRUD endpoints.
+let's start implementing endpoints for creating, reading, updating and deleting workouts.
+```bash
+touch src/controllers/workoutController.js 
+
+touch src/services/workoutService.js 
+
+touch src/v1/routes/workoutRoutes.js
+```
+
+
