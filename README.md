@@ -84,14 +84,45 @@ app.listen(PORT, () => {
     console.log(`API is listening on port ${PORT}`); 
 });
 ```
+<h4> Integrate a new script </h4>
 
-Now start the server
+```bash
+{
+  "name": "crossfit-wod-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
+
+```
+### Why the Script inside package.json ??
+The script makes sure that the development server restarts automatically when we make changes (thanks to nodemon).
+
+### Now start the development server
 ```bash
 npm run dev 
 ```
+Look at your terminal, and there should be a message that the "API is listening on port 3000".
+
+Visit localhost:3000 inside your browser. When everything is setup correctly
+The endpoint should be : <b> localhost:3000/api/v1 </b>
+
 ## Name Resources in Plural
 Let's start with our fundamental CRUD endpoints.
 let's start implementing endpoints for creating, reading, updating and deleting workouts.
+
 Go to the directory of crossfit-wod-api on the command line and create the below files
 ```bash
 touch src/controllers/workoutController.js 
