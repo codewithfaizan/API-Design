@@ -24,7 +24,7 @@
 <h3>Basic Setup</h3>
 
 ```bash
-let's begin
+echo "Faizaaannn!!! let's begin"
 ```
 ### Create project folder & navigate into it
 ```bash
