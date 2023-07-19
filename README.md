@@ -56,12 +56,12 @@ npm init -y
 
 <h4>Install dependencies for the basic setup: </h4>
 
-## Dev Dependencies 
+### Dev Dependencies 
 ```bash
 npm i -D nodemon 
 ```
 
-## Dependencies 
+### Dependencies 
 ```bash
 npm i express
 ```
