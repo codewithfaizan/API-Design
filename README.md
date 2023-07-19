@@ -27,31 +27,44 @@
 mkdir crossfit-wod-api && cd crossfit-wod-api
 ```
 
-# Create a src folder & navigate into it
+## Create a src folder & navigate into it
+```bash
 mkdir src && cd src
-
-# Create sub folders
+```
+## Create sub folders
+```bash
 mkdir controllers && mkdir services && mkdir database && mkdir routes
 
-# Create an index file (entry point of our API)
+```
+
+## Create an index file (entry point of our API)
+```bash
 touch index.js
-
-# We're currently in the src folder, so we need to move one level up first 
+```
+## We're currently in the src folder, so we need to move one level up first 
+```bash
 cd .. 
-
-# Create package.json file 
+```
+## Create package.json file 
+```bash
 npm init -y
+```
 
 <h4>Install dependencies for the basic setup: </h4>
 
-# Dev Dependencies 
+## Dev Dependencies 
+```bash
 npm i -D nodemon 
+```
 
-# Dependencies 
+## Dependencies 
+```bash
 npm i express
+```
 
 <h4>Open the project and configure Express:</h4>
 
+```bash
 // In src/index.js 
 const express = require("express"); 
 
@@ -66,3 +79,4 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => { 
     console.log(`API is listening on port ${PORT}`); 
 });
+```
