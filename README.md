@@ -123,7 +123,7 @@ The endpoint should be : <b> localhost:3000/api/v1 </b>
 Let's start with our fundamental CRUD endpoints.
 let's start implementing endpoints for creating, reading, updating and deleting workouts.
 
-# REST API Best Practices
+## REST API Best Practices
 Let's start simple with our fundamental CRUD endpoints. After that we'll be extending the API with each best practice.
 
 ### Versioning
@@ -142,12 +142,66 @@ But how can we differentiate between the versions? One good practice is to add a
 // ...
 ```
 There are many different approaches to handling versioning inside an Express API. In our case I'd like to create a sub folder for each version inside our src directory called v1.
+```bash
+mkdir src/v1
+```
 
+Now we move our routes folder into that new v1 directory.
+```bash
+# Get the path to your current directory (copy it) 
+pwd 
 
+# Move "routes" into "v1" (insert the path from above into {pwd}) 
+mv {pwd}/src/routes {pwd}/src/v1
+```
+The new directory /src/v1/routes will store all our routes for version 1.
 
+```bash
+# In /src/v1/routes 
+touch index.js
+```
+Inside there we spin up a simple router.
+```bash
+// In src/v1/routes/index.js
+const express = require("express");
+const router = express.Router();
 
+router.route("/").get((req, res) => {
+  res.send(`<h2>Hello from ${req.baseUrl}</h2>`);
+});
+
+module.exports = router;
+```
+Now we have to hook up our router for v1 inside our root entry point inside src/index.js.
+
+```bash
+// In src/index.js
+const express = require("express");
+// *** ADD ***
+const v1Router = require("./v1/routes");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// *** REMOVE ***
+app.get("/", (req, res) => {
+  res.send("<h2>It's Working!</h2>");
+});
+
+// *** ADD ***
+app.use("/api/v1", v1Router);
+
+app.listen(PORT, () => {
+  console.log(`API is listening on port ${PORT}`);
+});
+```
+Now visit <b>localhost:3000/api/v1</b> inside your browser.
+
+### Congratulations! You've just structured the project for handling different versions.  
+We are now passing incoming requests with "/api/v1" to our version 1 router
 
 ### Name Resources in Plural
+let's start implementing endpoints for creating, reading, updating and deleting workouts. <br>
 Go to the directory of crossfit-wod-api on the command line and create the below files
 ```bash
 touch src/controllers/workoutController.js 
@@ -157,5 +211,13 @@ touch src/services/workoutService.js
 touch src/v1/routes/workoutRoutes.js
 ```
 
+We could name the creation endpoint /api/v1/workout because we'd like to add one workout, right? Basically there's nothing wrong with that approach – but this can lead to misunderstandings. <br>
 
+<b>Note :<b> Your API is used by other humans and should be precise. This goes also for naming your resources. <br>
+
+In our example the box is a collection that stores different workouts.
+
+Naming your resources in plural has the big advantage that it's crystal clear to other humans, that this is a collection that consists of different workout.
+
+let's define our endpoints inside our workout route :
 
