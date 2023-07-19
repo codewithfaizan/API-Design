@@ -92,6 +92,7 @@ npm run dev
 ## Name Resources in Plural
 Let's start with our fundamental CRUD endpoints.
 let's start implementing endpoints for creating, reading, updating and deleting workouts.
+Go to the directory of crossfit-wod-api on the command line and create the below files
 ```bash
 touch src/controllers/workoutController.js 
 
