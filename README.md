@@ -116,13 +116,38 @@ npm run dev
 ```
 Look at your terminal, and there should be a message that the "API is listening on port 3000".
 
-Visit localhost:3000 inside your browser. When everything is setup correctly
+Visit localhost:3000 inside your browser. When everything is setup correctly. <br> 
 The endpoint should be : <b> localhost:3000/api/v1 </b>
 
 ## Name Resources in Plural
 Let's start with our fundamental CRUD endpoints.
 let's start implementing endpoints for creating, reading, updating and deleting workouts.
 
+# REST API Best Practices
+Let's start simple with our fundamental CRUD endpoints. After that we'll be extending the API with each best practice.
+
+### Versioning
+Before we write any API-specific code we should be aware of versioning. Like in other applications there will be improvements, new features, and stuff like that. So it's important to version our API as well.
+
+The current and new versions are basically running in parallel and don't affect each other.
+## Note : 
+But how can we differentiate between the versions? One good practice is to add a path segment like v1 or v2 into the URL.
+```bash
+// Version 1 
+"/api/v1/workouts" 
+
+// Version 2 
+"/api/v2/workouts" 
+
+// ...
+```
+There are many different approaches to handling versioning inside an Express API. In our case I'd like to create a sub folder for each version inside our src directory called v1.
+
+
+
+
+
+### Name Resources in Plural
 Go to the directory of crossfit-wod-api on the command line and create the below files
 ```bash
 touch src/controllers/workoutController.js 
@@ -131,5 +156,6 @@ touch src/services/workoutService.js
 
 touch src/v1/routes/workoutRoutes.js
 ```
+
 
 
