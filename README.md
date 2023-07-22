@@ -223,6 +223,7 @@ let's define our endpoints inside our workout route :
 
 ```bash
 // In src/v1/routes/workoutRoutes.js
+
 const express = require("express");
 const router = express.Router();
 
