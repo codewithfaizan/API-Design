@@ -1,25 +1,18 @@
 // In src/v1/routes/workoutRoutes.js
 const express = require("express")
+
+const workoutController = require("../../controller/workoutController")
 const router = express.Router();
 
 // This is how we define our end points in the workout router
-router.get("/", (req, res)=>{
- res.send("GET all workouts")
-});
+router.get("/",workoutController.getAllWorkouts);
 
-router.get("/:workoutId",(req, res)=>{
-    res.send("GET an existing workout")
-});
-router.post("/", (req, res)=> {
-    res.send("Create a new workout")
-});
+router.get("/:workoutId", workoutController.getOneWorkout );
 
-router.patch("/:workoutId", (req, res) =>{
-res.send("Update an existing workout")
-});
+router.post("/", workoutController.createNewWorkout);
 
-router.delete("/:workoutId", (req, res) =>{
-    res.send("Delete an existing workout")
-});
+router.patch("/:workoutId", workoutController.updateWorkout);
+
+router.delete("/:workoutId", workoutController.deleteWorkout);
 
 module.exports = router; 
