@@ -119,10 +119,6 @@ Look at your terminal, and there should be a message that the "API is listening 
 Visit localhost:3000 inside your browser. When everything is setup correctly. <br> 
 The endpoint should be : <b> localhost:3000/api/v1 </b>
 
-## Name Resources in Plural
-Let's start with our fundamental CRUD endpoints.
-let's start implementing endpoints for creating, reading, updating and deleting workouts.
-
 ## REST API Best Practices
 Let's start simple with our fundamental CRUD endpoints. After that we'll be extending the API with each best practice.
 
