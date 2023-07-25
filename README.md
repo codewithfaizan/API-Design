@@ -216,33 +216,3 @@ In our example the box is a collection that stores different workouts.
 Naming your resources in plural has the big advantage that it's crystal clear to other humans, that this is a collection that consists of different workout.
 
 let's define our endpoints inside our workout route :
-
-```bash
-// In src/v1/routes/workoutRoutes.js
-
-const express = require("express");
-const router = express.Router();
-
-router.get("/", (req, res) => {
-  res.send("Get all workouts");
-});
-
-router.get("/:workoutId", (req, res) => {
-  res.send("Get an existing workout");
-});
-
-router.post("/", (req, res) => {
-  res.send("Create a new workout");
-});
-
-router.patch("/:workoutId", (req, res) => {
-  res.send("Update an existing workout");
-});
-
-router.delete("/:workoutId", (req, res) => {
-  res.send("Delete an existing workout");
-});
-
-module.exports = router;
-```
-
